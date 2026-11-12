@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-white: #FFFFFF;
+  --text-dark: #0F172A;
+  --ocean-teal: #0D3B38;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #FFFFFF;
+  color: #0F172A;
+}
+
+body {
+  background-color: #FFFFFF;
+  color: #0F172A;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: #5A2FD8;
+  color: #FFFFFF;
+}
+
+@keyframes fishFloatA {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(24px, -14px) rotate(3deg);
+  }
+  50% {
+    transform: translate(48px, 0px) rotate(0deg);
+  }
+  75% {
+    transform: translate(24px, 16px) rotate(-3deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes fishFloatB {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(-20px, 16px) rotate(-3deg);
+  }
+  50% {
+    transform: translate(-42px, 0px) rotate(0deg);
+  }
+  75% {
+    transform: translate(-20px, -14px) rotate(3deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes fishFloatC {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(30px, 18px) rotate(4deg);
+  }
+  66% {
+    transform: translate(55px, -12px) rotate(-3deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes bubbleRise {
+  0% {
+    transform: translateY(0px) scale(0.9);
+    opacity: 0.15;
+  }
+  50% {
+    transform: translateY(-25px) scale(1.1);
+    opacity: 0.35;
+  }
+  100% {
+    transform: translateY(-50px) scale(0.9);
+    opacity: 0.15;
+  }
+}
+
+@keyframes tailSway {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(5deg) skewY(1.5deg);
+  }
+}
+
+.animate-tail {
+  transform-origin: 0% 50%;
+  animation: tailSway 5s ease-in-out infinite;
+}
+
+.animate-fish-a {
+  animation: fishFloatA 20s ease-in-out infinite;
+}
+
+.animate-fish-b {
+  animation: fishFloatB 25s ease-in-out infinite;
+}
+
+.animate-fish-c {
+  animation: fishFloatC 30s ease-in-out infinite;
+}
+
+.animate-bubble {
+  animation: bubbleRise 8s ease-in-out infinite;
+}
+
+/* === GIANT FISH AMBIENT FLOAT (very slow, large amplitude) === */
+@keyframes giantFloat {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(45px, -20px) rotate(1.5deg); }
+  50% { transform: translate(90px, 8px) rotate(0deg); }
+  75% { transform: translate(45px, 22px) rotate(-1.5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes giantFloatReverse {
+  0% { transform: translate(0, 0) rotate(0deg) scaleX(-1); }
+  25% { transform: translate(-45px, 18px) rotate(-1deg) scaleX(-1); }
+  50% { transform: translate(-90px, -6px) rotate(0deg) scaleX(-1); }
+  75% { transform: translate(-45px, -18px) rotate(1deg) scaleX(-1); }
+  100% { transform: translate(0, 0) rotate(0deg) scaleX(-1); }
+}
+
+/* Ocean atmospheric glow pulse */
+@keyframes oceanGlow {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.08); }
+}
+
+/* Gentle ocean current for atmosphere layers */
+@keyframes oceanCurrent {
+  0%, 100% { transform: translateX(0) skewX(0deg); }
+  50% { transform: translateX(30px) skewX(0.5deg); }
+}
+
+.animate-giant-float {
+  animation: giantFloat 50s ease-in-out infinite;
+}
+
+.animate-giant-float-reverse {
+  animation: giantFloatReverse 60s ease-in-out infinite;
+}
+
+.animate-ocean-glow {
+  animation: oceanGlow 8s ease-in-out infinite;
+}
+
+.animate-ocean-current {
+  animation: oceanCurrent 20s ease-in-out infinite;
+}
