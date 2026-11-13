@@ -167,3 +167,20 @@ body {
 .animate-ocean-current {
   animation: oceanCurrent 20s ease-in-out infinite;
 }
+
+/* Fluorescent Ocean Marquee Ribbon */
+@keyframes marqueeScroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: marqueeScroll 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
